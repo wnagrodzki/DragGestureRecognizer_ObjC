@@ -20,6 +20,7 @@
 		2EBB3DBE18EB638C007A7E63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2EBB3DBC18EB638C007A7E63 /* InfoPlist.strings */; };
 		2EBB3DC018EB638C007A7E63 /* DragGestureRecognizerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBB3DBF18EB638C007A7E63 /* DragGestureRecognizerTests.m */; };
 		2EBB3DCB18EB63E2007A7E63 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBB3DCA18EB63E2007A7E63 /* MainViewController.m */; };
+		2EBB3DCE18EB64DB007A7E63 /* NGDragGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBB3DCD18EB64DB007A7E63 /* NGDragGestureRecognizer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		2EBB3DBF18EB638C007A7E63 /* DragGestureRecognizerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DragGestureRecognizerTests.m; sourceTree = "<group>"; };
 		2EBB3DC918EB63E2007A7E63 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		2EBB3DCA18EB63E2007A7E63 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		2EBB3DCC18EB64DB007A7E63 /* NGDragGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGDragGestureRecognizer.h; sourceTree = "<group>"; };
+		2EBB3DCD18EB64DB007A7E63 /* NGDragGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGDragGestureRecognizer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,8 @@
 				2EBB3DAA18EB638C007A7E63 /* AppDelegate.m */,
 				2EBB3DAC18EB638C007A7E63 /* Images.xcassets */,
 				2EBB3DA118EB638C007A7E63 /* Supporting Files */,
+				2EBB3DCC18EB64DB007A7E63 /* NGDragGestureRecognizer.h */,
+				2EBB3DCD18EB64DB007A7E63 /* NGDragGestureRecognizer.m */,
 				2EBB3DC918EB63E2007A7E63 /* MainViewController.h */,
 				2EBB3DCA18EB63E2007A7E63 /* MainViewController.m */,
 			);
@@ -246,6 +251,7 @@
 			files = (
 				2EBB3DAB18EB638C007A7E63 /* AppDelegate.m in Sources */,
 				2EBB3DCB18EB63E2007A7E63 /* MainViewController.m in Sources */,
+				2EBB3DCE18EB64DB007A7E63 /* NGDragGestureRecognizer.m in Sources */,
 				2EBB3DA718EB638C007A7E63 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
