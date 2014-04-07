@@ -26,8 +26,8 @@
 
 @interface NGDragGestureRecognizer ()
 
-@property (assign, nonatomic) CGPoint initialTouchLocation;
-@property (strong, nonatomic) NSMapTable * viewsBeginLocations;
+@property (assign, nonatomic) CGPoint initialTouchLocationInReferenceView;
+@property (strong, nonatomic) NSMapTable * initialTouchLocationsInViews;
 
 @end
 
@@ -39,8 +39,8 @@
 - (CGPoint)translationInView:(UIView *)view
 {
     CGPoint currentLocation = [self locationInView:view];
-    NSValue * initialLocationValue = [self.viewsBeginLocations objectForKey:view];
-    CGPoint initialLocation = initialLocationValue ? initialLocationValue.CGPointValue : [[self referenceView] convertPoint:self.initialTouchLocation toView:view];
+    NSValue * initialLocationValue = [self.initialTouchLocationsInViews objectForKey:view];
+    CGPoint initialLocation = initialLocationValue ? initialLocationValue.CGPointValue : [[self referenceView] convertPoint:self.initialTouchLocationInReferenceView toView:view];
     return CGPointMake(currentLocation.x - initialLocation.x, currentLocation.y - initialLocation.y);
 }
 
@@ -49,7 +49,7 @@
     CGPoint currentLocation = [self locationInView:view];
     CGPoint initialLocation = CGPointMake(currentLocation.x - translation.x, currentLocation.y - translation.y);
     NSValue * initialLocationValue = [NSValue valueWithCGPoint:initialLocation];
-    [self.viewsBeginLocations setObject:initialLocationValue forKey:view];
+    [self.initialTouchLocationsInViews setObject:initialLocationValue forKey:view];
 }
 
 #pragma mark - Overriden
@@ -59,19 +59,19 @@
     [super setState:state];
     
     if (state == UIGestureRecognizerStateBegan) {
-        [self.viewsBeginLocations removeAllObjects];
-        self.initialTouchLocation = [self locationInView:[self referenceView]];
+        [self.initialTouchLocationsInViews removeAllObjects];
+        self.initialTouchLocationInReferenceView = [self locationInView:[self referenceView]];
     }
 }
 
 #pragma mark - Private Instance Methods
 
-- (NSMapTable *)viewsBeginLocations
+- (NSMapTable *)initialTouchLocationsInViews
 {
-    if (_viewsBeginLocations == nil) {
-        _viewsBeginLocations = [NSMapTable weakToStrongObjectsMapTable];
+    if (_initialTouchLocationsInViews == nil) {
+        _initialTouchLocationsInViews = [NSMapTable weakToStrongObjectsMapTable];
     }
-    return _viewsBeginLocations;
+    return _initialTouchLocationsInViews;
 }
 
 #pragma mark - Private Methods
